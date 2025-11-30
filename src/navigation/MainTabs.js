@@ -7,6 +7,8 @@ import DashboardScreen from '../screens/DashboardScreen';
 import TransactionListScreen from '../screens/TransactionListScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
+import AnalysisScreen from '../screens/AnalysisScreen';
+
 const Tab = createBottomTabNavigator();
 
 const MainTabs = () => {
@@ -26,6 +28,8 @@ const MainTabs = () => {
                         iconName = focused ? 'home' : 'home-outline';
                     } else if (route.name === 'Transactions') {
                         iconName = focused ? 'list' : 'list-outline';
+                    } else if (route.name === 'Analysis') {
+                        iconName = focused ? 'pie-chart' : 'pie-chart-outline';
                     } else if (route.name === 'Settings') {
                         iconName = focused ? 'settings' : 'settings-outline';
                     }
@@ -36,6 +40,7 @@ const MainTabs = () => {
         >
             <Tab.Screen name="Dashboard" component={DashboardScreen} />
             <Tab.Screen name="Transactions" component={TransactionListScreen} />
+            <Tab.Screen name="Analysis" component={AnalysisScreen} />
             <Tab.Screen name="Settings" component={SettingsScreen} />
         </Tab.Navigator>
     );

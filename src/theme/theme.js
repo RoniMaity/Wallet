@@ -1,7 +1,7 @@
 export const lightTheme = {
     dark: false,
     colors: {
-        primary: '#6200ee',
+        primary: '#10B981',
         background: '#f5f5f5',
         card: '#ffffff',
         text: '#000000',
@@ -16,14 +16,15 @@ export const lightTheme = {
 export const darkTheme = {
     dark: true,
     colors: {
-        primary: '#bb86fc',
-        background: '#121212',
-        card: '#1e1e1e',
-        text: '#ffffff',
-        border: '#272727',
-        notification: '#ff80ab',
-        success: '#81c784',
-        danger: '#e57373',
-        textSecondary: '#b0b0b0',
+        primary: '#10B981', // Sleek Emerald Green
+        background: '#000000', // True Black
+        card: '#121212', // Dark Gray for contrast
+        text: '#FFFFFF',
+        textSecondary: '#A1A1AA', // Zinc 400
+        border: '#27272A', // Zinc 800
+        notification: '#F43F5E', // Rose 500
+        success: '#10B981', // Emerald 500
+        danger: '#EF4444', // Red 500
+        warning: '#F59E0B', // Amber 500
     },
 };
