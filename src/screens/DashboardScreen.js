@@ -13,21 +13,12 @@ const DashboardScreen = ({ navigation }) => {
     const { state, reloadTransactions } = useTransactions();
     const { transactions, loading } = state;
 
-    const monthlyStats = useMemo(() => {
-        const now = new Date();
-        const currentMonth = now.getMonth();
-        const currentYear = now.getFullYear();
-
-        const thisMonthTransactions = transactions.filter(t => {
-            const date = new Date(t.date);
-            return date.getMonth() === currentMonth && date.getFullYear() === currentYear;
-        });
-
-        const income = thisMonthTransactions
+    const stats = useMemo(() => {
+        const income = transactions
             .filter(t => t.type === 'income')
             .reduce((sum, t) => sum + t.amount, 0);
 
-        const expense = thisMonthTransactions
+        const expense = transactions
             .filter(t => t.type === 'expense')
             .reduce((sum, t) => sum + t.amount, 0);
 
@@ -51,9 +42,9 @@ const DashboardScreen = ({ navigation }) => {
                 <Typography variant="h2" style={styles.header}>Dashboard</Typography>
 
                 <SummaryCard
-                    income={monthlyStats.income}
-                    expense={monthlyStats.expense}
-                    balance={monthlyStats.balance}
+                    income={stats.income}
+                    expense={stats.expense}
+                    balance={stats.balance}
                 />
 
                 <Typography variant="h3" style={styles.sectionTitle}>Recent Transactions</Typography>
