@@ -6,6 +6,9 @@ import { Typography } from '../components/Typography';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import Layout from '../components/Layout';
+import Dropdown from '../components/Dropdown';
+
+const PAYMENT_MODES = ['Cash', 'Card', 'UPI', 'Net Banking', 'Other'];
 
 const AddTransactionScreen = ({ navigation }) => {
     const { theme } = useTheme();
@@ -77,11 +80,11 @@ const AddTransactionScreen = ({ navigation }) => {
                     onChangeText={setCategory}
                 />
 
-                <Input
+                <Dropdown
                     label="Payment Mode"
-                    placeholder="e.g., Cash, Card, UPI"
                     value={paymentMode}
-                    onChangeText={setPaymentMode}
+                    options={PAYMENT_MODES}
+                    onSelect={setPaymentMode}
                 />
 
                 <Input

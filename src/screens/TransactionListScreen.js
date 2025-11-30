@@ -89,7 +89,7 @@ const TransactionListScreen = ({ navigation }) => {
                     <View style={styles.filterRow}>
                         <Typography variant="body" style={{ marginRight: 8 }}>Mode:</Typography>
                         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                            {['All', 'Cash', 'Card', 'UPI'].map((mode) => (
+                            {['All', 'Cash', 'Card', 'UPI', 'Net Banking', 'Other'].map((mode) => (
                                 <Button
                                     key={mode}
                                     title={mode}
